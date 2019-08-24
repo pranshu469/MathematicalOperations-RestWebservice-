@@ -1,13 +1,11 @@
 
 package com.json;
 
-import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
 
 public class ParseResult
 {
-    private static final Logger logger=Logger.getLogger(ParseResult.class.getName());
     public static Calculate ParseResultMethod(String request) throws Exception
     {
       Calculate obj=new Calculate();
