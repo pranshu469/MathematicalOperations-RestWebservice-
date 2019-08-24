@@ -1,11 +1,9 @@
 package com.json;
 
 import java.sql.Statement;
-import org.apache.log4j.Logger;
 
 public class Calculate
 {
-    private static final Logger logger=Logger.getLogger(Calculate.class.getName());
     public int x;
     public int y;
     public int result;
@@ -21,13 +19,13 @@ public class Calculate
         if(action.equals("add"))
         {  
             this.result = this.x+this.y;
-            logger.info(result);
+            System.out.println(result);
             try{
             String t1="add";
             Statement s=GenericResource.c.createStatement();
             s.executeUpdate("insert into "+GenericResource.p.getProperty("tb")+" values('"+t1+"','"+x+"','"+y+"','"+result+"')");
             
-        } catch (Exception e) {logger.error(e);}
+        } catch (Exception e) {System.out.println(e);}
             this.resultstr=String.valueOf(result);
         }
         
@@ -36,13 +34,13 @@ public class Calculate
         if(action.equals("sub"))
         { 
         this.result = this.x-this.y;
-        logger.info(result);
+        System.out.println(result);
         try{
         String t1="sub";
         Statement s=GenericResource.c.createStatement();
         s.executeUpdate("insert into "+GenericResource.p.getProperty("tb")+" values('"+t1+"','"+x+"','"+y+"','"+result+"')");
         
-        } catch (Exception e) {logger.error(e);}
+        } catch (Exception e) {System.out.println(e);}
          this.resultstr=String.valueOf(result);
         }
          
@@ -52,13 +50,13 @@ public class Calculate
         if(action.equals("mul"))
         {
         this.result = this.x*this.y;
-        logger.info(result);
+        System.out.println(result);
         try{
         String t1="mul";
         Statement s=GenericResource.c.createStatement();
         s.executeUpdate("insert into "+GenericResource.p.getProperty("tb")+" values('"+t1+"','"+x+"','"+y+"','"+result+"')");
         
-        } catch (Exception e) {logger.error(e);}
+        } catch (Exception e) {System.out.println(e);}
          this.resultstr=String.valueOf(result);
         }
  
@@ -68,13 +66,13 @@ public class Calculate
         if(action.equals("div"))
         { 
         this.result = this.x/this.y;
-        logger.info(result);
+        System.out.println(result);
         try{
         String t1="div";
         Statement s=GenericResource.c.createStatement();
         s.executeUpdate("insert into "+GenericResource.p.getProperty("tb")+" values('"+t1+"','"+x+"','"+y+"','"+result+"')");
         
-        } catch (Exception e) {logger.error(e);}
+        } catch (Exception e) {System.out.println(e);}
          this.resultstr=String.valueOf(result);
         }
  
