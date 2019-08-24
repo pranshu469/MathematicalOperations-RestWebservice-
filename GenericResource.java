@@ -13,14 +13,12 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
-import org.apache.log4j.Logger;
 
 
 @Path("generic")
 @SuppressWarnings("UseSpecificCatch")
 public class GenericResource {
     
-    private static final Logger logger=Logger.getLogger(GenericResource.class.getName());
     static Properties p;
     static InputStream is;
     static Connection c;
@@ -61,11 +59,11 @@ public class GenericResource {
             Calculate obj=ParseResult.ParseResultMethod(content);
             String i=obj.calc();
             show="{\"result is\":\""+i+"\"}";
-            logger.info(show);
+            System.out.println(show);
             
         }
          catch(Exception e){
-             show="check your input : action must be a string & x and y shoud be integers";logger.error(e);
+             show="check your input : action must be a string & x and y shoud be integers";System.out.println(e);
          }
         
         return show;
