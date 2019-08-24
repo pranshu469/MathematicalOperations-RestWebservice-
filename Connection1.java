@@ -5,26 +5,23 @@ import static com.json.GenericResource.p;
 import java.io.FileInputStream;
 import java.sql.DriverManager;
 import java.util.Properties;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 
 
 public class Connection1
 {
-    private static final Logger logger=Logger.getLogger(Connection1.class.getName());
     
     public void conn()
     {
+        //machine dependent
         String path="C:\\Users\\Pranshu\\Documents\\NetBeansProjects\\19-06-19\\RestJson_2\\src\\java\\com\\json\\JSON.properties";
 
-             PropertyConfigurator.configure(path);
              p = new Properties();
             try{
                     GenericResource.is = new FileInputStream(path);
                 } 
                 catch (Exception e) 
                 {
-                     logger.error(e);
+                     System.out.println(e);
                 }
 
             try {
@@ -32,7 +29,7 @@ public class Connection1
                 }
                 catch (Exception e) 
                 {
-                      logger.error(e);
+                      System.out.println(e);
                 }
 
             try{
@@ -41,7 +38,7 @@ public class Connection1
                }
                 catch(Exception e)
                 { 
-                     logger.error(e);
+                     System.out.println(e);
                 }
 
     }
